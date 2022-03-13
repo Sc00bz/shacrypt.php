@@ -59,8 +59,7 @@ function sha512crypt_create($password, $rounds = 190000)
 function shacrypt_verify($password, $hash)
 {
 	// Prevent CVE-2016-20013
-	$pwLen = strlen($password);
-	if ($pwLen > 1024)
+	if (strlen($password) > 1024)
 	{
 		return false;
 	}
